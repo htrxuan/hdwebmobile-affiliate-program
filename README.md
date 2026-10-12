@@ -1,4 +1,4 @@
-# HDWebmobile Affiliate & Referral Program
+# HDWebmobile Affiliate Program
 
 Referral links earn commission on completed orders -- payouts are always admin-approved, self-referral is blocked server-side.
 

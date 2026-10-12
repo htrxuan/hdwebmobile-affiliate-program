@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: HDWebmobile Affiliate & Referral Program
+ * Plugin Name: HDWebmobile Affiliate Program
  * Plugin URI: https://hdwebmobile.com/plugins/hdwebmobile-affiliate-program/
  * Description: Referral links earn commission on completed orders -- payouts are always admin-approved, self-referral is blocked server-side.
  * Version: 1.0.0
