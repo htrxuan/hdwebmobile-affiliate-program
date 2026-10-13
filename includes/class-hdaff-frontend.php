@@ -34,11 +34,29 @@ final class HDAFF_Frontend
         add_filter('woocommerce_checkout_create_order', array($this, 'stamp_classic_order'), 10, 1);
         add_action('woocommerce_store_api_checkout_update_order_from_request', array($this, 'stamp_block_order'), 10, 1);
 
-        add_action('woocommerce_order_status_completed', array('htrxuan\\hdaff\\HDAFF_Repository', 'award_commission'));
-        add_action('woocommerce_order_status_cancelled', array('htrxuan\\hdaff\\HDAFF_Repository', 'reverse_commission'));
-        add_action('woocommerce_order_status_refunded', array('htrxuan\\hdaff\\HDAFF_Repository', 'reverse_commission'));
+        // These hooks pass the order ID first, not the order object -- resolve it here so the
+        // repository keeps its strict \WC_Order signature.
+        add_action('woocommerce_order_status_completed', array($this, 'handle_order_completed'));
+        add_action('woocommerce_order_status_cancelled', array($this, 'handle_order_reversed'));
+        add_action('woocommerce_order_status_refunded', array($this, 'handle_order_reversed'));
 
         add_action('woocommerce_account_dashboard', array($this, 'render_account_summary'));
+    }
+
+    public function handle_order_completed($order_id)
+    {
+        $order = wc_get_order($order_id);
+        if ($order instanceof \WC_Order) {
+            HDAFF_Repository::award_commission($order);
+        }
+    }
+
+    public function handle_order_reversed($order_id)
+    {
+        $order = wc_get_order($order_id);
+        if ($order instanceof \WC_Order) {
+            HDAFF_Repository::reverse_commission($order);
+        }
     }
 
     /**
