@@ -37,6 +37,9 @@ This plugin is built so neither mistake can happen:
 * No automated payout integration (PayPal, bank transfer, etc.) -- marking a commission "Paid" is a record of a payment made elsewhere
 * Attribution is last-click, 30-day cookie window
 
+= Enjoying this plugin? =
+If it helps your site, please consider [leaving an honest review on WordPress.org](https://wordpress.org/support/plugin/hdwebmobile-affiliate-program/reviews/#new-post) -- it helps other WordPress users find it. Found a problem or have an idea? Please [open a support topic](https://wordpress.org/support/plugin/hdwebmobile-affiliate-program/) first so it can be fixed.
+
 == Installation ==
 
 1. Upload the plugin files to the `/wp-content/plugins/hdwebmobile-affiliate-program` directory, or install the plugin through the WordPress plugins screen directly.
