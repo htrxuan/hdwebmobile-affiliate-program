@@ -3,7 +3,7 @@ Contributors: htrxuan
 Donate link: https://paypal.me/htrxuan/20
 Tags: woocommerce, affiliate, referral, commission, marketing
 Requires at least: 6.9
-Tested up to: 7.1
+Tested up to: 7.2
 Requires PHP: 7.4
 Stable tag: 1.0.0
 Requires Plugins: woocommerce
