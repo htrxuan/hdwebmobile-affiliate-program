@@ -10,14 +10,12 @@ if (!defined('ABSPATH')) {
  * The commission ledger, referral-code generation, and the ONLY place a commission is ever
  * awarded or moved toward being paid.
  *
- * CVE-2025-47771-style bug (CWE-862, Missing Authorization) seen across several competing
- * "Affiliate for WooCommerce" plugins: their commission approve/reject/payout AJAX endpoints
- * checked only is_user_logged_in() (or nothing at all), never a specific capability, letting
- * any registered affiliate approve and mark their OWN pending commissions as paid -- and some
- * of the same plugins additionally trusted a client-supplied "referred_by" user id at
- * checkout, so a shopper could just declare themselves referred by anyone (including an
- * account they control), fabricating commission for orders that were never genuinely
- * referred at all.
+ * The risk this guards against (CWE-862, Missing Authorization): commission approve/reject/
+ * payout actions that check only is_user_logged_in(), never a specific capability, would let
+ * any registered affiliate approve and mark their OWN pending commissions as paid -- and
+ * trusting a client-supplied "referred_by" user id at checkout would let a shopper declare
+ * themselves referred by anyone (including an account they control), fabricating commission
+ * for orders that were never genuinely referred at all.
  *
  * This class makes both mistakes impossible by construction:
  *

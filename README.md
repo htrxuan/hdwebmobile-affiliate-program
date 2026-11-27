@@ -12,7 +12,7 @@ Lets any logged-in customer generate their own referral link from My Account. Wh
 
 ## Why this plugin exists
 
-Several competing "Affiliate for WooCommerce" style plugins have shipped commission approve/reject/payout actions that check only whether a request is logged in -- not any specific capability -- letting a Subscriber-level affiliate account approve and mark their own pending commissions as paid (CWE-862, Missing Authorization). Some of the same plugins have also trusted a client-supplied "referred by" user id at checkout, letting a shopper simply declare themselves referred by an account they control.
+A common flaw in affiliate plugins: commission approve/reject/payout actions that check only whether a request is logged in -- not any specific capability -- letting a Subscriber-level affiliate account approve and mark their own pending commissions as paid (CWE-862, Missing Authorization). A related flaw trusts a client-supplied "referred by" user id at checkout, letting a shopper simply declare themselves referred by an account they control.
 
 This plugin is built so neither mistake can happen:
 
